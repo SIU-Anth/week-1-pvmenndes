@@ -22,7 +22,7 @@ library(palmerpenguins)
 
 Did you get any error codes?
 
--   [ ] **Task**: Copy/paste your error code here: <!-- Copy/paste your error codes on the line below here, I'll be looking for them. By the way, this is one way to comment Quarto documents -->
+-   [ ] **Task**: Copy/paste your error code here: <!-- Copy/paste your error codes on the line below here, I'll be looking for them. By the way, this is one way to comment Quarto documents --> undefined
 
 If you haven't played around in R before, you might not have packages installed. Run the following code, noting that you have to put your packages in quotes for `install.packages`
 
@@ -104,6 +104,7 @@ We'll talk more about types of data and ways to store data (generally and in R) 
 
 In the square in the top right of your screen, check out the Environment tab. Do you see the dataframe df? Click the little blue and white circled arrow next to it, you'll now see 28 variables.
 
--   [ ] **Task:** Write a few (3-5) sentences about the types of data you see (just pick a few, no need to go crazy Week 1), and then a couple sentences about what you think this dataset is from. (Hint 1: I've left enough breadcrumbs that you can find the original publication.) (Hint 2: If you click on the dataframe in the top right pane, the dataframe will open as a table in this pane and you can more easily scroll about.)
+-   [ ] **Task:** Write a few (3-5) sentences about the types of data you see (just pick a few, no need to go crazy Week 1), and then a couple sentences about what you think this dataset is from. (Hint 1: I've left enough breadcrumbs that you can find the original publication.) (Hint 2: If you click on the dataframe in the top right pane, the dataframe will open as a table in this pane and you can more easily scroll about.)\
+    \
 
 -   [ ] Change the title and author of this document to a title that makes sense to you and your name as author. Submit these Quarto files via GitHub and/or D2L. In my ideal world, you push to Github and then just paste the link in the assignment tab on D2L- let's me find your GitHub quickly, and it saves you from D2L "reminding" you that you haven't done the assignment.
