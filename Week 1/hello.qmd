@@ -1,0 +1,109 @@
+---
+title: "Hello, Quarto"
+format: html
+editor: visual
+author: Chris Stantis
+---
+
+## First Steps
+
+This is your first Quarto document for ANTH455D!
+
+For this exercise, we'll use the **tidyverse** and **palmerpenguins** packages. Run the following code below (click the green button in the top right). Further, label the code chunk `load-packages` using `#| label`.
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Uh-oh?
+
+Did you get any error codes?
+
+-   [ ] **Task**: Copy/paste your error code here: <!-- Copy/paste your error codes on the line below here, I'll be looking for them. By the way, this is one way to comment Quarto documents -->
+
+If you haven't played around in R before, you might not have packages installed. Run the following code, noting that you have to put your packages in quotes for `install.packages`
+
+```{r}
+#| include: false
+install.packages("tidyverse")
+install.packages("palmerpenguins")
+```
+
+That installed the packages onto your computer so that R can access it. In order to use it in our current session, we have to load the package using the library() function.
+
+-   [ ] **Task**: Re-run the code chunk that loads libraries tidyverse and palmerpenguins, now that you've installed them.
+
+## Meet Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Meet the penguins
+
+![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="401"}
+
+The `penguins` data from the [**palmerpenguins**](https://allisonhorst.github.io/palmerpenguins "palmerpenguins R package") package contains size measurements for `{r} nrow(penguins)` penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.
+
+The plot below shows the relationship between flipper and bill lengths of these penguins. We'll learn more about making a plot like this in later weeks.
+
+```{r}
+#| label: plot-penguins
+#| warning: false
+#| echo: false
+
+ggplot(penguins, 
+       aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species, shape = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(
+    title = "Flipper and bill length",
+    subtitle = "Dimensions for penguins at Palmer Station LTER",
+    x = "Flipper length (mm)", y = "Bill length (mm)",
+    color = "Penguin species", shape = "Penguin species"
+  ) +
+  theme_minimal()
+```
+
+### Wait, penguins don't have much to do with anthropology?!
+
+Good catch. When your instructor is just *struggling* for anthropology examples, you'll probably analyze some penguins instead.
+
+### Okay, but can we please start this with some anthropological data?
+
+*Fine.* Have a look in the files tab (if you haven't moved anything around in RStudio, it's the tab on the bottom right). See a file ending in .csv? Let's load it.
+
+## Loading data
+
+There's generally three ways to load data into R environment.
+
+1.  Use a package to grab a dataset from online (like Palmer's Penguins).
+
+2.  Using the Files tab, click on the dataset you want and then click 'Import Dataset...'
+
+3.  Run some handy code.
+
+-   [ ] **Task**: Below, write one reason you'd use the 'Import Dataset...' button, and one reason you'd have some code to load data.
+
+I suggest you play with the Import Dataset button to bring in the dataset (there's some good reasons to use it), but there's also this handy code chunk:
+
+```{r}
+#| label: load dataframe
+#| echo: false
+df <- read.csv("pone.0233912.s002.csv")
+```
+
+**Note**: The `echo: false` option disables the printing of code (only output is displayed).
+
+## Examining Data
+
+We'll talk more about types of data and ways to store data (generally and in R) next week, but you've just loaded a dataframe, a widely used data structure for storing and working with tabular data. I tend to name my dataframes "df", especially when I a) only have one dataframe and/or b) I'm just looking at stuff on the fly.
+
+### Environment tab
+
+In the square in the top right of your screen, check out the Environment tab. Do you see the dataframe df? Click the little blue and white circled arrow next to it, you'll now see 28 variables.
+
+-   [ ] **Task:** Write a few (3-5) sentences about the types of data you see (just pick a few, no need to go crazy Week 1), and then a couple sentences about what you think this dataset is from. (Hint 1: I've left enough breadcrumbs that you can find the original publication.) (Hint 2: If you click on the dataframe in the top right pane, the dataframe will open as a table in this pane and you can more easily scroll about.)
+
+-   [ ] Change the title and author of this document to a title that makes sense to you and your name as author. Submit these Quarto files via GitHub and/or D2L. In my ideal world, you push to Github and then just paste the link in the assignment tab on D2L- let's me find your GitHub quickly, and it saves you from D2L "reminding" you that you haven't done the assignment.
